@@ -1,9 +1,46 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="../assets/images/icona-cibando.png" class="logo">
+       Cibando</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#"><i class="pi pi-home"></i> Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="pi pi-book"></i> Ricette</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="pi pi-envelope"></i> Contatti</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<ngb-carousel *ngIf="images">
+
+	<ng-template ngbSlide *ngFor="let image of images">
+		<div class="picsum-img-wrapper">
+			<img [src]="percorsoFoto + image.id + '.jpg' " [alt]="image.label" />
+		</div>
+		<div class="carousel-caption">
+			<h3>{{ image.label }}</h3>
+		</div>
+	</ng-template>
+
+</ngb-carousel>
+
+
 <div class="contenitore">
-  <h2>
-    App di esempio
-  </h2>
-  <p class="paragrafo">Ecco il testo dentro al <span>paragrafo</span></p>
-  ecco un altro <span>testo</span>
+  <h2>App di esempio</h2>
+  <p class="paragrafo">ecco il testo dentro al <span>paragrafo</span>
+  </p>
+  ecco un <span>altro</span> testo
 </div>
 
 <router-outlet></router-outlet>
