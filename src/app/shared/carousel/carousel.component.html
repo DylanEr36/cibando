@@ -1,0 +1,19 @@
+<ngb-carousel *ngIf="images.length > 1; else noCarousel">
+
+	<ng-template ngbSlide *ngFor="let image of images; let i = index">
+		<div class="picsum-img-wrapper">
+			<img [src]="percorsoFoto + image.id + '.jpg' " [alt]="image.label" />
+		</div>
+		<div class="carousel-caption">
+			<h1>{{ image.label }}</h1>
+      <h5 *ngIf="images.length - 1 === i">Ultima foto</h5>
+		</div>
+	</ng-template>
+
+</ngb-carousel>
+<ng-template #noCarousel>
+  <div>
+    <img [src]="percorsoFoto + images[0].id + '.jpg' " [alt]="images[0].label">
+  </div>
+</ng-template>
+

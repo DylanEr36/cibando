@@ -1,8 +1,6 @@
 .contenitore {
-  background-color: green;
 
   h2 {
-    color: white;
     font-size: 50px;
   }
 
@@ -11,5 +9,10 @@
       font-weight: bold;
       color: red;
     }
+  }
+
+  .testoEvidenziato {
+    background-color: yellow;
+    width: 565px;
   }
 }
