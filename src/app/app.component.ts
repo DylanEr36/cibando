@@ -7,7 +7,7 @@ import { OnInit } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  evidenziato = false;
+
 
   constructor(){}
 
@@ -15,9 +15,6 @@ export class AppComponent implements OnInit {
 
   }
 
-  onEvidenziato() {
-    this.evidenziato = !this.evidenziato;
-  }
 }
 
 

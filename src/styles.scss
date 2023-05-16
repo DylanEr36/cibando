@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "~primeicons/primeicons.css";
+// @import "../../../styles/colori.scss";
 
 body {
   font-family: 'Montserrat', sans-serif;
@@ -20,7 +21,7 @@ nav {
 }
 
 .contenitore {
-
+   padding:16px;
 }
 
 h3 {
