@@ -1,0 +1,21 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~primeicons/primeicons.css";
+@import "../../../../styles.scss";
+@import url('https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap');
+
+.bg-image{
+    min-width: 100%;
+    max-height: 800px;
+}
+
+h2{
+    font-family: "Homemade Apple", cursive;
+    margin-left: 30px;
+    color: rgb(122, 16, 16)
+}
+
+p{
+    text-align: justify;
+    margin-left: 30px;
+    margin-right: 30px;
+}

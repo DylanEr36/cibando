@@ -12,7 +12,7 @@ const routes: Routes = [
     { path: '', component: RecipesListComponent, pathMatch: 'full'},
     { path: 'dettaglio/:title/:_id', component: DetailComponent},
   ]},
-  { path: '**', redirectTo: 'home'}
+  { path: '**', redirectTo: ''}
 ];
 
 @NgModule({
