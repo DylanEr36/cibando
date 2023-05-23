@@ -8,8 +8,8 @@
   .card-title{
     font-weight: bold;
     font-size: 16px;
-    color: red;
-  }
+    color: rgb(122, 16, 16);
+    }
 
   .card-image{
     height: 200px;
@@ -19,5 +19,9 @@
 
   .card-test {
     text-align: justify;
+  }
+
+  .btn{
+    background-color: rgb(122, 16, 16);;
   }
 }

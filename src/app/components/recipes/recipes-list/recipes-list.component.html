@@ -1,2 +1,8 @@
-<h2>Le nostre ricette:</h2>
-<app-recipe-card [recipes]="ricette"></app-recipe-card>
+<div>
+  <h2>Le nostre ricette:</h2>
+  <br>
+  <p *ngIf="titoloRicevuto">{{titoloRicevuto}}</p>
+</div>
+<div>
+  <app-recipe-card [recipes]="ricette" (messaggio)="riceviMessaggio($event)"></app-recipe-card>
+</div>

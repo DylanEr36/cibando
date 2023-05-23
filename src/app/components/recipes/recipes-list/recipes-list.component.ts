@@ -9,7 +9,7 @@ import { Recipe } from 'src/app/models/recipe.model';
 })
 export class RecipesListComponent implements OnInit{
   ricette: Recipe[];
-
+  titoloRicevuto: string;
   constructor(private recipeService: RecipeService){}
 
   ngOnInit(): void {
@@ -21,5 +21,10 @@ export class RecipesListComponent implements OnInit{
         console.log(err);
       }
     })
+  }
+
+
+  riceviMessaggio(e: any){
+    this.titoloRicevuto == e ? this.titoloRicevuto = '' : this.titoloRicevuto = e;
   }
 }
