@@ -14,9 +14,24 @@ export class RecipeCardComponent {
 
   constructor(private recipeService: RecipeService){}
 
-  inviaTitolo(titolo: string){
-    this.messaggio.emit(titolo);
+  inviaTitolo(titolo: string, diff: number){
+    const valoriDaInviare = {
+      titolo: titolo,
+      diff: diff,
+    }
+    this.messaggio.emit(valoriDaInviare);
   }
+
+  accorciaDescrizione(descrizione):number{
+    const lunghezzaMassima = 198;
+    if(descrizione.length <= lunghezzaMassima){
+      return lunghezzaMassima;
+    } else {
+      let ultimaPosizioneSpazio = descrizione.indexOf(' ', lunghezzaMassima);
+      return ultimaPosizioneSpazio;
+    }
+  }
+
 
   ngOnInit() {
     this.recipeService.getRecipes().subscribe({

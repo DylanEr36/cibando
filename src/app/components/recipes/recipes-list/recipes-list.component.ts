@@ -10,6 +10,7 @@ import { Recipe } from 'src/app/models/recipe.model';
 export class RecipesListComponent implements OnInit{
   ricette: Recipe[];
   titoloRicevuto: string;
+  difficoltaRicevuta: number;
   constructor(private recipeService: RecipeService){}
 
   ngOnInit(): void {
@@ -25,6 +26,8 @@ export class RecipesListComponent implements OnInit{
 
 
   riceviMessaggio(e: any){
-    this.titoloRicevuto == e ? this.titoloRicevuto = '' : this.titoloRicevuto = e;
+    console.log(JSON.parse(e));
+    this.titoloRicevuto == e.titolo ? this.titoloRicevuto = '' : this.titoloRicevuto = e.titolo;
+    this.difficoltaRicevuta = e.diff
   }
 }
