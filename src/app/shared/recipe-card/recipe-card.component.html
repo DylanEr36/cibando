@@ -1,10 +1,15 @@
-<div class="container-card" *ngFor="let recipe of recipes">
+<div id="container-paginatore" *ngIf="pag != 'home'">
+
+  <p-paginator (onPageChange)="paginate($event)" [rows]="ricettePerPagina" [totalRecords]="recipes.length"></p-paginator>
+
+</div>
+<div class="container-card" *ngFor="let recipe of recipes | slice: (page * ricettePerPagina) - ricettePerPagina : page * ricettePerPagina">
   <div class="card">
-    <div class="card-image" [ngStyle]="{'background-image': 'url(' + recipe.image + ')'}" (click)="inviaTitolo(recipe.title, recipe.difficulty)"></div>
-      <div class="card-body">
-        <h5 class="card-title">{{recipe.title}}</h5>
-        <p class="card-text">{{recipe.description | slice: 0:accorciaDescrizione(recipe.description)}} ...</p>
-        <a class="btn btn-primary" routerLink="dettaglio/{{recipe.title}}/{{recipe._id}}">Visualizza</a>
+    <div class="card-image" [ngStyle]="{'background-image': 'url(' + recipe.image + ')'}" (click)="inviaTitolo(recipe.title, recipe.difficulty, true)" ></div>
+    <div class="card-body">
+      <h5 class="card-title">{{recipe.title}}</h5>
+      <p class="card-text">{{recipe.description | slice: 0:accorciaDescrizione(recipe.description)}} ...</p>
+      <a class="btn btn-primary" routerLink="dettaglio/{{recipe.title}}/{{recipe._id}}">Visualizza</a>
     </div>
   </div>
 </div>

@@ -1,3 +1,5 @@
+@import '../../../styles/colori.scss';
+
 .container-card {
   display: block;
   float: left;
@@ -5,23 +7,20 @@
   margin-left: 1.5%;
   margin-bottom: 20px;
 
-  .card-title{
+  .card-title {
     font-weight: bold;
     font-size: 16px;
-    color: rgb(122, 16, 16);
-    }
+    color: $primary-color-1;
+  }
 
-  .card-image{
+  .card-image {
     height: 200px;
     background-size: cover;
     background-repeat: no-repeat;
   }
 
-  .card-test {
+  .card-text {
     text-align: justify;
-  }
-
-  .btn{
-    background-color: rgb(122, 16, 16);;
+    color: $secondary-color-3;
   }
 }

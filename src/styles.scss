@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "~primeicons/primeicons.css";
+@import "./styles/colori.scss";
 
 
 body {
@@ -17,15 +18,15 @@ nav {
 }
 
 .bg-dark {
-  background-color: #8e210b!important;
+  background-color: $primary-color-1!important;
 }
 
 .contenitore {
-   padding:16px;
+  padding: 16px;
 }
 
 h3 {
   font-family: "Homemade Apple", cursive;
-  font-size: 40px;
+  font-size:40px;
   text-shadow: black 2px 3px 3px;
 }

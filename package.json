@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --proxy-config proxy.conf.json",
     "build": "ng build",
-    "watch": "ng build --watch --configuration development",
+    "watch": "ng build --watch --configuration devnelopment",
     "test": "ng test"
   },
   "private": true,
@@ -23,7 +23,7 @@
     "bootstrap": "^5.2.3",
     "jquery": "^3.6.4",
     "primeicons": "^6.0.1",
-    "primeng": "^16.0.0-rc.1",
+    "primeng": "^15.3.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
