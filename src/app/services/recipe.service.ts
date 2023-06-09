@@ -25,8 +25,12 @@ export class RecipeService {
   //   return of (recipe);
   // }
 
-getRecipe(id: string): Observable<Recipe> {
-  return this.http.get<Recipe>(`${this.apiBaseUrl}/${id}`);
+  getRecipe(id: string): Observable<Recipe> {
+    return this.http.get<Recipe>(`${this.apiBaseUrl}/${id}`);
+  }
+
+  deleteRecipe(id:string): Observable<Recipe> {
+    return this.http.delete<Recipe>(`${this.apiBaseUrl}/${id}`);
   }
 }
 

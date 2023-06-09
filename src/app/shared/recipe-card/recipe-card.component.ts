@@ -2,6 +2,8 @@ import { Component, Input, Output, EventEmitter} from '@angular/core';
 import { Recipe } from 'src/app/models/recipe.model';
 import { RecipeService } from 'src/app/services/recipe.service';
 import { OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-recipe-card',
   templateUrl: './recipe-card.component.html',
@@ -13,8 +15,9 @@ export class RecipeCardComponent implements OnInit{
  @Input() pag;
  page = 1;
  ricettePerPagina = 4;
+ id: string;
 
-  constructor(private recipeService: RecipeService){}
+  constructor(private recipeService: RecipeService, private modalService: NgbModal, private router: Router){}
 
   ngOnInit(): void {
     this.recipeService.getRecipes().subscribe({
@@ -53,4 +56,34 @@ export class RecipeCardComponent implements OnInit{
   event.page = event.page + 1;
   this.page = event.page;
  }
+
+ open(content: any, id: any){
+  this.id = id
+
+  this.modalService.open(content, {ariaLabelledBy: 'modal registration', size: 'lg', centered:true}).result.then(
+    (res) => {
+      console.log(this.id)
+    }).catch((res) => {
+      console.log('nessuna azione da eseguire')
+    })
+  }
+
+  eliminaRicetta(id: string){
+      //recuper id
+      console.log(id)
+
+      // converto in numero
+      // const idN = Number(id);
+
+      this.recipeService.deleteRecipe(id).subscribe({
+        next: (res) => {
+          console.log('ricetta eliminata!')
+          this.router.navigate(['home']);
+        },
+        error: (e) => {
+          console.log(e);
+        }
+      })
+  }
+
 }

@@ -9,7 +9,23 @@
     <div class="card-body">
       <h5 class="card-title">{{recipe.title}}</h5>
       <p class="card-text">{{recipe.description | slice: 0:accorciaDescrizione(recipe.description)}} ...</p>
-      <a class="btn btn-primary" routerLink="dettaglio/{{recipe.title}}/{{recipe._id}}">Visualizza</a>
+      <a class="btn btn-primary btn-visualizza" routerLink="dettaglio/{{recipe.title}}/{{recipe._id}}">Visualizza</a>
+      <a class="btn btn-primary btn-delete"><i class="pi pi-trash"(click)="open(modalEliminazione, recipe._id)"></i></a>
     </div>
   </div>
 </div>
+
+
+<ng-template #modalEliminazione let-modal>
+  <div class="modal-header">
+    <button type="button" class="btn-close" aria-label="close" (click)="modal.dismiss()"></button>
+  </div>
+  <div class="class modal-body">
+    <h2>Sei sicuro di voler eliminare la ricetta:</h2>
+  </div>
+  <div class="class modal-footer">
+    <button type="button" class="btn" (click)="eliminaRicetta(id)">CONFERMA</button>
+    <button type="button" class="btn" (click)="modal.dismiss()">ANNULLA</button>
+    <!-- <button type="button" class="btn btn-primary" (click)="modal.close()" ngbAutoFocus>AZIONE</button> -->
+  </div>
+</ng-template>

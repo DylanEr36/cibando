@@ -23,4 +23,16 @@
     text-align: justify;
     color: $secondary-color-3;
   }
+
+  .btn-visualizza{
+    background-color: $primary-color-1!important;
+    border-color: $primary-color-1!important;
+    margin-left: 25%!important;
+  }
+
+  .btn-delete{
+    background-color: $primary-color-1!important;
+    border-color: $primary-color-1!important;
+    margin-left: 5%!important;
+  }
 }
