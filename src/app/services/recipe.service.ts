@@ -3,13 +3,14 @@ import { Recipe } from '../models/recipe.model';
 import { RECIPES } from '../mocks/recipe.mock';
 import { Observable, of} from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-
+import { ReplaySubject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
 export class RecipeService {
 
   apiBaseUrl = '/api/recipes';
+  datiRicetta = new ReplaySubject();
 
   constructor(private http: HttpClient) { }
 
@@ -32,5 +33,10 @@ export class RecipeService {
   deleteRecipe(id:string): Observable<Recipe> {
     return this.http.delete<Recipe>(`${this.apiBaseUrl}/${id}`);
   }
+
+  createRecipe(recipe: any): Observable<any> {
+    return this.http.post<any>(`${this.apiBaseUrl}/`, recipe);
+  }
+
 }
 
